@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-color: #DA1A5D;
+  --secondary-color: #1D96D2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.MuiLoadingButton-root,
+.MuiButtonBase-root{
+  background-color: #F80759 !important;
+  box-shadow: unset
+}
+
+.MuiIconButton-root{
+  background-color: unset !important;
+}
+.bgPinggo{
+  background: linear-gradient(160deg, #DA1A5D 0%, #1E96D2 100%);
+}
+.boxLabel{
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.boxValue{
+  font-size: 22px;
+  font-weight: 700;
+  color: #DA1A5D
+}
+
+.MuiTablePagination-menuItem{
+  background-color: #fff !important;
+}
+
+/* swal */
+
+.swal2-container{
+  z-index: 9999 !important;
+}
+.swal2-title{
+  font-size: 1rem !important
+}
+
+.swal2-styled.swal2-confirm{
+  background-color: #1D96D2;
+}
+
+.swal2-html-container{
+  font-size: .9rem !important;
+}
+.swal2-html-container strong{
+  color: #CF0026
+}
+
+.time-picker input{
+  background-color: #f0f0f0;
+}
+
+.MuiDataGrid-columnHeaders {
+  background-color: var(--primary-color);
+}
+
+.MuiDataGrid-columnHeaderTitle{
+  color: #fff !important
+}
+.MuiDataGrid-cellContent,
+.MuiDataGrid-cell--withRenderer{
+  color: #222;
+  font-weight: 400;
+}
+.chart{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .boxValue{
+    font-size: 15px !important;
+  }
+  .chart{
+    height: auto;
+  }
+}
+
