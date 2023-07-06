@@ -62,7 +62,7 @@ export default function ChartMetric(){
 
     return (
         <div className='chart'>
-            <Bar options={options} data={data} />;
+            <Bar options={options} data={data} />
         </div>
     )
 }
