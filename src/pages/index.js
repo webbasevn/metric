@@ -1,8 +1,14 @@
+import LoadingSection from "@/components/loading/section";
+import { useMetric } from "@/hooks/useMetric";
 import ChartMetric from "@/theme/partials/dashboard/chart";
 import DataTable from "@/theme/partials/dashboard/datatable";
 import { Typography } from "@mui/material";
 
 const App = () => { 
+
+  const {metric,first_loading} = useMetric()
+
+  if(first_loading) return <LoadingSection />
 
   return (
 
