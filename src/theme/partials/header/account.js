@@ -40,7 +40,7 @@ export default function AccountHeader(){
 
     if(firstLoading) return
     return(
-        <Stack direction="row" spacing={2} alignItems="center" justifyContent="flex-end" display={{xs: 'none', md: 'flex'}}>
+        <Stack direction="row" spacing={2} alignItems="center" justifyContent="flex-end">
             <Avatar
                 sx={{ width: 26, height: 26, bgcolor: 'primary.main' }}
             >

@@ -13,14 +13,14 @@ export default function HeaderDefault(){
             <Container maxWidth={globalConfig.maxWidth}>
                 <Grid container spacing={2} sx={{py: 2, alignItems: 'center'}}>
                     <Grid xs={6} md={4} order={{xs: 1, md: 1}}>
-                        <Stack direction="row" alignItems="center" spacing={3} divider={<Divider orientation="vertical" flexItem />}>
+                        <Stack direction="row" alignItems="center" spacing={3} divider={<Divider orientation="vertical" flexItem />} py={2}>
                             <Image
                                 src="/logo/logo.svg"
                                 width={120}
                                 height={20}
                                 alt="PingGO Logo"
                             />
-                            <Typography variant="body1" fontWeight={600} textTransform="uppercase" color="primary.main">
+                            <Typography variant="body1" fontWeight={600} textTransform="uppercase" color="primary.main" display={{xs: 'none', md: 'block'}}>
                                 API đối tác Metric
                             </Typography>
                         </Stack>
