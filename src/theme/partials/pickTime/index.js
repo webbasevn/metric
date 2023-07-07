@@ -9,6 +9,8 @@ import { useMetric } from "@/hooks/useMetric";
 const startDay = dayjs(dayjs().startOf("month")).format('YYYY-MM-DD')
 const endDay = dayjs(dayjs().endOf("month")).format('YYYY-MM-DD')
 
+const startDayOfYear = dayjs(dayjs().startOf("year")).format('YYYY-MM-DD')
+
 export default function PickTime(){
 
     const {filterMetric} = useMetric()
@@ -52,8 +54,8 @@ export default function PickTime(){
                     customToday: { 
                         text: "This Year",
                         period: {
-                        start: "2023-06-29",
-                        end: "2023-06-29"
+                        start: startDayOfYear,
+                        end: new Date()
                         }, 
                     }, 
                     }
