@@ -39,7 +39,7 @@ export default function HeaderTable({...props}){
                         Doanh thu
                     </Typography>
                     <Typography variant="body2" color="#fff" fontWeight={700}>
-                        <FormatCurrency data={get_total_money(props.metric)} />
+                        <FormatCurrency data={get_total_revanua(props.metric)} />
                     </Typography>
                 </Stack>
 
@@ -48,7 +48,7 @@ export default function HeaderTable({...props}){
                         Doanh thu thuần
                     </Typography>
                     <Typography variant="body2" color="#fff" fontWeight={700}>
-                        <FormatCurrency data={get_total_revanua(props.metric)} />
+                        <FormatCurrency data={get_total_money(props.metric)} />
                     </Typography>
                 </Stack>
             </Stack>

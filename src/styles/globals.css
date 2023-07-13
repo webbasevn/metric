@@ -22,8 +22,7 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-.MuiLoadingButton-root,
-.MuiButtonBase-root{
+.MuiButton-containedPrimary{
   background-color: #F80759 !important;
   box-shadow: unset
 }

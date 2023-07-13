@@ -2,17 +2,58 @@ import HeaderTable from '@/components/datatable/header';
 import FormatCurrency from '@/components/format/money';
 import LoadingSection from '@/components/loading/section';
 import { useMetric } from '@/hooks/useMetric';
-import { DataGrid, viVN } from '@mui/x-data-grid';
+import { DataGrid, viVN, GridToolbarColumnsButton, GridToolbarExport  } from '@mui/x-data-grid';
 import { makh } from '@/components/data/makh';
-import { Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 
-function get_ma_metric(name){
-    let result = ""
-    makh.map(item =>{
-        if(item.name === name) result = item.ma
-    })
+function check(ten,item){
+  let result = item
 
-    return result
+  makh.map(item => {
+
+    if(item.name === ten){
+      result.ma_metric = item.ma
+      return
+    }
+
+    result.ma_metric = 'unknow'
+
+  })
+
+  return result
+}
+
+function get_ma_metric(metric){
+
+  let result = []
+
+  metric.map(item => {
+    result.push(check(item.ten,item))
+  })
+
+  return result
+    
+}
+
+function CustomToolbar() {
+  return (
+    <>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+          <Typography variant="h2" fontSize={18} color="#1E96D2" my={3} fontWeight={700}>
+              Chi tiết doanh số từng shop
+          </Typography>
+          <Stack direction="row" alignItems="center" spacing={2}>
+            <GridToolbarColumnsButton />
+            <GridToolbarExport 
+              csvOptions={{
+                fileName: 'khach-hang-metric',
+                utf8WithBom: true,
+              }}
+            />
+          </Stack>
+      </Stack>
+    </>
+  );
 }
 
 const columns = [
@@ -20,7 +61,6 @@ const columns = [
     field: 'ma_metric', 
     headerName: 'Mã KH Metric', 
     width: 150,
-    renderCell:(params) => <Typography variant='body2'>{get_ma_metric(params.row.ten)}</Typography>
   },
   { 
     field: 'ten', 
@@ -55,6 +95,7 @@ const columns = [
     renderCell:(params) => <FormatCurrency data={params.value}/>
   },
 ];
+
 export default function DataTable(){
 
     const {metric,first_loading} = useMetric()
@@ -66,7 +107,7 @@ export default function DataTable(){
             <HeaderTable metric={metric}/>
             <div style={{ height: 500, width: '100%' }}>
                 <DataGrid
-                    rows={metric}
+                    rows={get_ma_metric(metric)}
                     columns={columns}
                     getRowId={(row) => row.ma}
                     initialState={{
@@ -76,6 +117,7 @@ export default function DataTable(){
                             },
                         },
                     }}
+                    slots={{ toolbar: CustomToolbar }}
                     autoHeight={true}
                     pageSizeOptions={[10,20,30]}
                     disableRowSelectionOnClick

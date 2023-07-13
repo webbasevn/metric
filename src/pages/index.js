@@ -17,9 +17,7 @@ const App = () => {
          Biểu đồ doanh số các shop
       </Typography>
       <ChartMetric />
-      <Typography variant="h2" fontSize={18} color="#1E96D2" my={3} fontWeight={700}>
-          Chi tiết doanh số
-      </Typography>
+      
       <DataTable />
     </>
   );

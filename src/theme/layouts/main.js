@@ -11,8 +11,6 @@ export default function MainLayout({children}){
 
     const {userData,firstLoading} = useAuth()
 
-    console.log("user data" , userData)
-
     if(firstLoading) return <LoadingScreen />
 
     if(!userData){
