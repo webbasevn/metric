@@ -89,7 +89,7 @@ const columns = [
     renderCell:(params) => <FormatCurrency data={params.value}/>
   },
   { 
-    field: 'tong_sl_x_dg', 
+    field: 'doanh_thu_thuan', 
     headerName: 'Doanh thu thuần', 
     width: 200,
     renderCell:(params) => <FormatCurrency data={params.value}/>

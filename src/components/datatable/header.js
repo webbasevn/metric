@@ -15,7 +15,7 @@ function get_total_money(metric){
 
 function get_total_revanua(metric){
     let result = 0
-    metric.map(item => result += item.tong_sl_x_dg)
+    metric.map(item => result += item.doanh_thu_thuan)
     return result
 }
 
